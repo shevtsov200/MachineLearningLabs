@@ -1,3 +1,15 @@
+
+read_tic_tac_toe <- function() {
+  raw_data <- read.table(paste(common_dir_path,"Tic_tac_toe.txt",sep=""), sep = ",", stringsAsFactors = TRUE)
+  colnames(raw_data)[colnames(raw_data)=="V10"] <- "type"
+  return(raw_data)
+}
+
+read_spam <- function() {
+  data(spam)
+  return(spam)
+}
+
 validate_model <- function(classifier, read_data, n_seq) {
   A_raw <- read_data()
   rounded_digits <- 2

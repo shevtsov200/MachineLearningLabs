@@ -2,21 +2,9 @@ library(e1071)
 library(kernlab)
 library(data.table)
 
-data(spam)
-
 common_dir_path <- "../../Common/"
 
 source(paste(common_dir_path,"common_functions.R",sep=""))
-
-read_tic_tac_toe <- function() {
-  raw_data <- read.table(paste(common_dir_path,"Tic_tac_toe.txt",sep=""), sep = ",", stringsAsFactors = TRUE)
-  colnames(raw_data)[colnames(raw_data)=="V10"] <- "type"
-  return(raw_data)
-}
-
-read_spam <- function() {
-  return(spam)
-}
 
 generate_points <- function() {
   points_quantity <- 50
